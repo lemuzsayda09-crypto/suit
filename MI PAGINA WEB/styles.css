@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfaf6; /* fondo crema claro */
+  color: #3e3e3e;
+}
+
+header, footer {
+  background-color: #d8c3a5; /* beige oscuro */
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: white;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background-color: #f5e9dc; /* beige suave */
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #3e3e3e;
+  margin: 0.5em 0;
+}
+
+.hero {
+  text-align: center;
+  padding: 2em;
+  background-color: #fdfaf6;
+}
+
+.hero img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.car-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 1em;
+  justify-content: center;
+  background-color: #fdfaf6;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.car-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.car-list::-webkit-scrollbar-thumb {
+  background-color: #d8c3a5;
+  border-radius: 4px;
+}
+
+.car-list::-webkit-scrollbar-track {
+  background-color: #fdfaf6;
+}
+
+.car-card {
+  flex: 0 0 auto;
+  width: 250px;
+  background-color: #f5e9dc; /* beige suave */
+  border: 1px solid #d8c3a5;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 2px 2px 8px rgba(90, 75, 59, 0.2);
+  text-align: center;
+}
+
+.car-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #a68f6b; /* beige intenso */
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  margin-top: 0.5em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #8c7355; /* marrón más profundo */
+}

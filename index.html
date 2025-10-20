@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoNova</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfaf6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #d8c3a5;
+      color: white;
+      padding: 1em;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      background-color: #a68f6b;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .menu {
+      position: absolute;
+      top: 60px;
+      right: 1em;
+      background-color: #f5e9dc;
+      border: 1px solid #d8c3a5;
+      border-radius: 8px;
+      padding: 1em;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #3e3e3e;
+      margin: 0.5em 0;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .menu a:hover {
+      color: #a68f6b;
+    }
+
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #fdfaf6;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #2c2c2c;
+    }
+
+    .hero p {
+      font-size: 1.5em;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #444;
+    }
+
+    .car-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .car-card {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .car-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #d8c3a5;
+      color: white;
+    }
+
+    #blog, #contacto {
+      display: none;
+    }
+  .car-card1 {      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  .car-card2 {      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.car-card11 {background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  .car-card3 {      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  .car-card4 {      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  .car-card5 {      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  .car-card6 {      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  .car-card7 {      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  .car-card8 {      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  .car-card9 {      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  .car-card10 {      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  .car-card12 {      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  .car-card13 {      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  .car-card14 {      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  .car-card15 {      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  .car-card16 {      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  .car-card17 {      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">AutoNova</div>
+    <button class="menu-toggle" onClick="toggleMenu()">Menú</button>
+    <nav class="menu" id="menu">
+      <a onClick="mostrarInicio()">Inicio</a>
+      <a onClick="scrollToSeccion('catalogo')">Catálogo</a>
+      <a onClick="mostrarSeccion('blog')">Blog</a>
+      <a onClick="mostrarSeccion('contacto')">Contáctanos</a>
+    </nav>
+  </header>
+
+<section id="inicio" class="hero">
+    <h1>Bienvenido a AutoNova</h1>
+    <p>“Estilo, potencia y confianza en cada kilómetro.”</p>
+    <img src="../MI PAGINA WEB/Free  Speed, Fast, Drive Background Images, Car Vehicle Automobile Transportation Background Photo Background PNG and Vectors.jpeg" alt="Banner de prueba" width="1136" height="295" /></section>
+
+    <h1>Vehículos en Oferta</h1><!-- Carrusel horizontal dentro del catálogo -->
+<div id="catalogo-carrusel" style="overflow: hidden; cursor: grab; width: 100%; padding: 20px 0; background-color: #fdfaf6;">
+  <div id="catalogo-track" style="display: flex; animation: scroll 40s linear infinite;">
+    <div class="car-card" style="min-width: 300px; margin: 10px; background: #fff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 10px;">
+      <img src="MI PAGINA WEB/carro34.jpg" alt="Ford Mustang 2022" width="736" height="552" style="width: 100%; height: 180px; object-fit: cover; border-radius: 6px;" />
+      <h3>Toyota Land Cruiser Prado</h3>
+      <p>Año: 2022 </p>
+      <p>Precio: $1200,000</p>
+	   <button onClick="verAuto('MI PAGINA WEB/carro34.jpg', 'Toyota Land Cruiser Prado', ' $1200,000')">Ver</button>
+    </div>
+    <div class="car-card" style="min-width: 300px; margin: 10px; background: #fff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 10px;">
+      <img src="MI PAGINA WEB/carro35.jpg" alt="Kia Rio 2017" width="1200" height="800" style="width: 100%; height: 180px; object-fit: cover; border-radius: 6px;" />
+      <h3>Audi R8</h3>
+      <p>Año: 2024  </p>
+      <p>Precio: $900.000</p>
+	   <button onClick="verAuto('MI PAGINA WEB/carro35.jpg', 'Audi R8', '$900.000')">Ver</button>
+    </div>
+    <div class="car-card" style="min-width: 300px; margin: 10px; background: #fff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 10px;">
+      <span class="car-card15" style="min-width: 300px; margin: 10px; background: #fff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 10px;"><img src="MI PAGINA WEB/carro36.jpg" alt="Hyundai Tucson 2015" width="736" height="459" style="width: 100%; height: 180px; object-fit: cover; border-radius: 6px;" /></span>
+      <h3>Chevrolet</h3>
+      <p>Año: 1993 </p>
+      <p>Precio: $300,000</p>
+	   <button onClick="verAuto('MI PAGINA WEB/carro36.jpg', 'Chevrolet', '$,000')">Ver</button>
+    </div>
+    <!-- Agrega más vehículos aquí -->
+  </div>
+</div>
+
+<style>
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.33%); }
+  }
+</style>
+
+<script>
+  const track = document.getElementById('catalogo-track');
+  const carousel = document.getElementById('catalogo-carrusel');
+
+  const originalCards = track.innerHTML;
+  track.innerHTML = originalCards + originalCards;
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  carousel.addEventListener('mousedown', e => {
+    isDown = true;
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+    carousel.style.cursor = 'grabbing';
+    track.style.animationPlayState = 'paused';
+  });
+
+  carousel.addEventListener('mouseleave', () => {
+    isDown = false;
+    carousel.style.cursor = 'grab';
+    track.style.animationPlayState = 'running';
+  });
+
+  carousel.addEventListener('mouseup', () => {
+    isDown = false;
+    carousel.style.cursor = 'grab';
+    track.style.animationPlayState = 'running';
+  });
+
+  carousel.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - carousel.offsetLeft;
+    const walk = (x - startX) * 2;
+    carousel.scrollLeft = scrollLeft - walk;
+  });
+
+  let touchStartX = 0;
+  let touchScrollLeft = 0;
+
+  carousel.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].pageX - carousel.offsetLeft;
+    touchScrollLeft = carousel.scrollLeft;
+    track.style.animationPlayState = 'paused';
+  });
+
+  carousel.addEventListener('touchmove', e => {
+    const x = e.touches[0].pageX - carousel.offsetLeft;
+    const walk = (x - touchStartX) * 2;
+    carousel.scrollLeft = touchScrollLeft - walk;
+  });
+
+  carousel.addEventListener('touchend', () => {
+    track.style.animationPlayState = 'running';
+  });
+</script>
+
+
+  <section id="catalogo" class="hero">
+  <h1>Catálogo</h1>
+    <h2>Vehículos Nuevos </h2>
+    <!-- Modal principal al tocar "Ver" -->
+<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:999;">
+  <div style="background:#fff; padding:20px; border-radius:8px; max-width:600px; width:90%; text-align:center; position:relative;">
+    <span onClick="cerrarModal()" style="position:absolute; top:10px; right:20px; font-size:24px; cursor:pointer;">×</span>
+    <img id="modal-img" src="" alt="Auto seleccionado" style="width:100%; height:auto; border-radius:6px;" />
+    <h3 id="modal-titulo"></h3>
+    <p id="modal-precio"></p>
+    <button onClick="comprarAhora()" style="margin:10px; padding:10px 20px; background-color:#a68f6b; color:white; border:none; border-radius:6px;">Comprar ahora</button>
+  </div>
+</div>
+
+<!-- Modal de compra al tocar "Comprar ahora" -->
+<div id="registro-pago" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:1000;">
+  <div style="background:#fff; padding:20px; border-radius:8px; max-width:500px; width:90%; text-align:left; position:relative;">
+    <span onClick="cerrarRegistro()" style="position:absolute; top:10px; right:20px; font-size:24px; cursor:pointer;">×</span>
+    <h2>Registro de pago</h2>
+    <p><strong>Auto:</strong> <span id="pago-titulo"></span></p>
+    <p><strong>Precio:</strong> <span id="pago-precio"></span></p>
+    <label>Nombre completo:</label>
+    <input type="text" style="width:100%; padding:8px; margin-bottom:10px;" />
+    <label>Correo electrónico:</label>
+    <input type="email" style="width:100%; padding:8px; margin-bottom:10px;" />
+    <label>Método de pago:</label>
+    <select style="width:100%; padding:8px; margin-bottom:20px;">
+      <option>Tarjeta de crédito</option>
+      <option>Transferencia bancaria</option>
+      <option>Pago en efectivo</option>
+    </select>
+    <button onClick="confirmarPago()" style="padding:10px 20px; background-color:#28a745; color:white; border:none; border-radius:6px;">Confirmar pago</button>
+  </div>
+</div>
+
+ <div class="car-list">
+<div class="car-card">
+        <img src="../MI PAGINA WEB/carro11.jpg" alt="Ford Mustang 2022" />
+        <h3>Ford Mustang 2023 </h3>
+        <p>Precio: $1,200,000</p>
+        <button onClick="verAuto('carro11.jpg', 'Ford Mustang 2023', '$1,200,000')">Ver</button>
+</div>
+
+	  <div class="car-card">
+	          <img src="../MI PAGINA WEB/carro5.jpg" alt="Carro 1" width="99%" height="178" />
+	          <h3> Kia Rio 2022</h3>
+              <p>Precio: $450.000</p>
+              <button onClick="verAuto('carro5.jpg', 'Kia Rio 2022', '$450.000')">Ver</button>
+</div>
+	  
+      <div class="car-card">
+        <p><img src="../MI PAGINA WEB/carro33.jpg" alt="Carro 1" width="736" height="196" /></p>
+        <h3>Hyundai Tucson 2021</h3>
+        <p>Precio: $750,000</p>
+        <button onClick="verAuto('carro33.jpg', 'Hyundai Tucson 2021', '$750,000')">Ver</button>
+</div>
+      <div class="car-card"><span class="car-card17"><img src="MI PAGINA WEB/1.jpg" alt="Carro 1" width="736" height="414" /></span></span>
+        <h3>Toyota Hilux 2024</h3>
+        <p>Precio: $850,000</p>
+        <button onClick="verAuto('MI PAGINA WEB/1.jpg', 'Toyota Hilux 2024', '$850,000')">Ver</button>
+</div>
+	  <div class="car-card">
+<img src="MI PAGINA WEB/3.jpg" alt="Carro 1" width="1200" height="675" /></span>
+	    <h3>Toyota Hilux 2023 </h3>
+        <p>Precio: $800,000</p>
+        <button onClick="verAuto('MI PAGINA WEB/3.jpg', 'Toyota Hilux 2023 ', '$800,000')">Ver</button>
+</div>
+      <div class="car-card">
+        <img src="../MI PAGINA WEB/carro12.jpg" alt="" width="101%" height="181" /></span>
+        <h3>Toyota Hilux Gris 2024 </h3>
+        <p>Precio: $850,000</p>
+        <button onClick="verAuto('carro12.jpg', 'Toyota Hilux Gris 2024', '$850,000')">Ver</button>
+</div>
+    </div>
+	
+    <h2>Vehículos Semi-Nuevos </h2>
+	 <div class="car-list">
+      <div class="car-card">
+        <img src="../MI PAGINA WEB/carro13.jpg" alt="" width="102%" height="141" />
+        <h3>Toyota Supra 2022</h3>
+        <p>Precio: $500,000</p>
+        <button onClick="verAuto('carro13.jpg', 'Toyota Supra 2022', '$500,000')">Ver</button>
+</div>
+    <div class="car-card">
+      <img src="../MI PAGINA WEB/carro31.jpg" alt="" width="100%" height="164" />
+      <h3>Chevrolet Pickup 2020 </h3>
+        <p>Precio: $750,000</p>
+        <button onClick="verAuto('carro31.jpg', 'Chevrolet Pickup 2020 ', '$750,000')">Ver</button>
+</div>
+      <div class="car-card">
+        <img src="../MI PAGINA WEB/carro14.jpg" alt="" width="96%" height="216" />
+        <h3>Toyota RG Supra 2022 </h3>
+        <p>Precio: $1,400,000</p>
+        <button onClick="verAuto('carro14.jpg', 'Toyota RG Supra 2022 ', '$1,400,000')">Ver</button>
+      </div>
+      <div class="car-card">
+        <img src="../MI PAGINA WEB/carro15.jpg" alt="" width="98%" height="169" lowsrc="../MI PAGINA WEB/carro15.jpg" />
+        <h3>Toyota Land Cruiser Prado 2024 </h3>
+        <p>Precio: $1,300,000</p>
+        <button onClick="verAuto('carro15.jpg', 'Toyota Land Cruiser Prado', '$1,300,000')">Ver</button>
+    </div>
+      <div class="car-card">
+        <img src="MI PAGINA WEB/4.jpg" alt="Carro 1" width="1000" height="750" />
+        <h3>Ferrari F8 Tributo 2023</h3>
+        <p>Precio: $4,500,000</p>
+        <button onClick="verAuto('MI PAGINA WEB/4.jpg', 'Ferrari F8 Tributo', '$4,500,000')">Ver</button>
+    </div>
+	  <div class="car-card">
+	    <img src="MI PAGINA WEB/5.jpg" alt="Carro 1" width="1200" height="750" />
+	    <h3>Ferrari Portofino 2023</h3>
+        <p>Precio: $4,000,000</p>
+        <button onClick="verAuto('MI PAGINA WEB/5.jpg', 'Ferrari Portofino 2023', '$4,000,000')">Ver</button>
+    </div>
+	    <div class="car-card">
+	     <img src="../MI PAGINA WEB/carro20.jpg" alt="" width="98%" height="174" />
+	      <h3> Toyota Land Cruiser Off-Road 2020</h3>
+        <p>Precio: $1,800,000</p>
+        <button onClick="verAuto('carro20.jpg', ' Toyota Land Cruiser Off-Road 2020', '$1,800,000')">Ver</button>
+      </div>
+	        <div class="car-card">
+	      <img src="MI PAGINA WEB/6.jpg" alt="Carro 1" width="1200" height="800" /></span>
+	          <h3> Nissan X-Trail 2022 </h3>
+              <p>Precio: $800,000</p>
+        <button onClick="verAuto('MI PAGINA WEB/6.jpg', ' Nissan X-Trail', '$800,000')">Ver</button>
+    </div>
+	        <div class="car-card">
+	          <img src="../MI PAGINA WEB/carro22.jpg" alt="Carro 1" width="94%" height="169" />
+	          <h3> JAC JS2 2024 </h3>
+              <p>Precio: $400,000</p>
+        <button onClick="verAuto('carro22.jpg', ' JAC JS2 2024', '$400,000')">Ver</button>
+    </div>
+    </div>
+		
+	    <h2>Vehículos Usados </h2>
+	 <div class="car-list">
+	        <div class="car-card">
+	     <img src="MI PAGINA WEB/7.jpg" alt="Carro 1" width="1012" height="559" /></span>
+	          <h3> Nissan Altima 2023 </h3>
+              <p>Precio: $450,000</p>
+              <button onClick="verAuto('MI PAGINA WEB/7.jpg', ' Nissan Altima 2023', '$450,000')">Ver</button>
+    </div>
+	        <div class="car-card">
+	          <img src="../MI PAGINA WEB/carro24.jpg" alt="Carro 1" width="108%" height="189" />
+	          <h3> Chevrolet Cruze 2020 </h3>
+              <p>Precio: $350,000</p>
+              <button onClick="verAuto('carro24.jpg',  Chevrolet Cruze 2020', '$350,000')">Ver</button>
+    </div>
+	        <div class="car-card">
+	          <img src="../MI PAGINA WEB/carro26.jpg" alt="Carro 1" width="102%" height="147" />
+	          <h3>Hyundai Tucson 2024</h3>
+        <p>Precio: $500,000</p>
+        <button onClick="verAuto('carro26.jpg', 'Hyundai Tucson', '$500,000')">Ver</button>
+      </div>
+	        <div class="car-card">
+        <img src="../MI PAGINA WEB/carro25.jpg" alt="Carro 1" width="98%" height="148" />
+        <h3>BMW Serie 1 Hatchback 2022</h3>
+        <p>Precio: $1,000,000</p>
+        <button onClick="verAuto('carro25.jpg', 'BMW Serie 1 Hatchback 2022', '$1,000,000')">Ver</button>
+    </div>
+	        <div class="car-card">
+	          <img src="../MI PAGINA WEB/carro27.jpg" alt="Carro 1" width="91%" height="162" />
+	          <h3>Chevrolet Silverado 3500HD 2023 </h3>
+              <p>Precio: $1,200,000</p>
+              <button onClick="verAuto('carro27.jpg', 'Chevrolet Silverado 3500HD', '$1,200,000')">Ver</button>
+    </div>
+	        <div class="car-card">
+			<img src="../MI PAGINA WEB/carro28.jpg" alt="Carro 1" width="92%" height="151" /></span></span>
+	          <h3>Chevrolet Spark GT 2022 </h3>
+              <p>Precio: $280,000</p>
+              <button onClick="verAuto('carro28.jpg', 'Chevrolet Spark GT 2022', '$280,000')">Ver</button>
+    </div>
+</div>
+
+	<h2>Vehículos Restaurados</h2>
+	 <div class="car-list">
+	        <div class="car-card">
+        <img src="../MI PAGINA WEB/carro29.jpg" alt="Carro 1" width="735" height="159" />
+        <h3> Chevrolet Malibu 2018 </h3>
+        <p>Precio: $500,000</p>
+        <button onClick="verAuto('carro29.jpg', ' Chevrolet Malibu 2018', '$500,000')">Ver</button>
+    </div>
+	        <div class="car-card">
+	          <img src="../MI PAGINA WEB/carro30.jpg" alt="Carro 1" width="828" height="154" />
+	          <h3> Chevrolet Colorado ZR 2019 </h3>
+              <p>Precio: $800,000</p>
+              <button onClick="verAuto('carro30.jpg', ' Chevrolet Colorado ZR2', '$800,000')">Ver</button>
+    </div>
+	  	        <div class="car-card">
+				<img src="../MI PAGINA WEB/carro32.jpg" alt="Carro 1" width="100%" height="180" /></span></span>
+	  	          <h3> Chevrolet Silverado Z71 2020</h3>
+        <p>Precio: $1,000,000</p>
+        <button onClick="verAuto('carro32.jpg', ' Chevrolet Silverado Z71 2020', '$1,000,000')">Ver</button>
+    </div>
+	  	  	        <div class="car-card">
+	  	  	         <img src="MI PAGINA WEB/carro37.jpg" alt="Carro 1" width="736" height="415" /></span>
+	  	  	          <h3>Ferrari F430 2009 </h3>
+                      <p>Precio: $2,500,000</p>
+                      <button onClick="verAuto('MI PAGINA WEB/carro37.jpg', 'Ferrari F430 2009', '$2,500,000')">Ver</button>
+    </div>
+	  	  	        <div class="car-card">
+					<img src="MI PAGINA WEB/carro38.jpg" alt="Carro 1" width="960" height="684" /></span></span>
+	  	  	          <h3> Porsche 911 Turbo S 2021 </h3>
+                      <p>Precio: $4,500,000</p>
+                      <button onClick="verAuto('MI PAGINA WEB/carro38.jpg', ' Porsche 911 Turbo S 2021', '$4,500,000')">Ver</button>
+    </div>
+    </div>
+  </section> <!-- Agrega más autos aquí -->
+
+  <section id="blog" class="hero">
+   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | AutoNova</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfaf6;
+      color: #3e3e3e;
+    }
+
+    header {
+      background-color: #d8c3a5;
+      color: white;
+      padding: 1em;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      background-color: #a68f6b;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .menu {
+      position: absolute;
+      top: 60px;
+      right: 1em;
+      background-color: #f5e9dc;
+      border: 1px solid #d8c3a5;
+      border-radius: 8px;
+      padding: 1em;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #3e3e3e;
+      margin: 0.5em 0;
+      font-weight: bold;
+    }
+
+    .menu a:hover {
+      color: #a68f6b;
+    }
+
+    .blog-section {
+      background-color: #fdfaf6;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .blog-section h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+
+    .blog-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .blog-post {
+      background-color: #f5e9dc;
+      border: 2px solid #d8c3a5;
+      border-radius: 12px;
+      width: 320px;
+      overflow: hidden;
+      box-shadow: 2px 2px 10px rgba(90, 75, 59, 0.1);
+      text-align: left;
+      transition: transform 0.3s ease;
+    }
+
+    .blog-post:hover {
+      transform: translateY(-5px);
+    }
+
+    .blog-post img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid #d8c3a5;
+    }
+
+    .blog-content {
+      padding: 20px;
+    }
+
+    .blog-content h3 {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+      color: #3e3e3e;
+    }
+
+    .blog-content p {
+      font-size: 1em;
+      color: #5a4b3b;
+      margin-bottom: 15px;
+    }
+
+    .blog-content a {
+      text-decoration: none;
+      color: #a68f6b;
+      font-weight: bold;
+    }
+
+    .blog-content a:hover {
+      color: #8c7355;
+    }
+  .blog-list1 {      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+}
+  .blog-list2 {      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+}
+.blog-list11 {display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+}
+  .blog-list3 {      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+}
+  .blog-list4 {      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+}
+  .blog-list5 {      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+}
+.blog-list41 {display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+}
+  .blog-list6 {      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+}
+.blog-list411 {display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+}
+.blog-list51 {display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+}
+  .blog-list7 {      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+}
+.blog-list4111 {display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+}
+.blog-list511 {display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+}
+.blog-list61 {display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+}
+  </style>
+</head>
+<body>
+<section class="blog-section">
+    <h2>📝 Blog de AutoConsejos</h2>
+    <div class="blog-list">
+
+      <article class="blog-post">
+        <img src="../imagenes/comprar.jpg" alt="Comprar carro" width="1200" height="800" />
+        <div class="blog-content">
+          <h3>🛒 Cómo comprar tu primer carro sin errores</h3>
+          <p>Aprende a elegir el auto ideal, negociar precios, revisar historial y entender el financiamiento.</p>
+        <a href="#"></a>        </div>
+      </article>
+
+      <article class="blog-post">
+        <span class="blog-list2"><span class="blog-list11"><img src="file:///C|/\Xampp\htdocs/MI PAGINA WEB/mantenimiento.jpg" alt="Mantenimiento básico" width="732" height="489" /></span></span>
+        <div class="blog-content">
+          <h3>🧰 Mantenimiento básico que todo conductor debe saber</h3>
+          <p>Desde el cambio de aceite hasta la revisión de frenos, aquí tienes lo esencial para cuidar tu vehículo.</p>
+        <a href="#"></a>        </div>
+      </article>
+
+      <article class="blog-post">
+        <span class="blog-list3"><img src="file:///C|/\Xampp\htdocs/MI PAGINA WEB/Gasolina.jpg" alt="Ahorrar gasolina" width="680" height="510" /></span>
+        <div class="blog-content">
+          <h3>🧭 Trucos para ahorrar gasolina y conducir mejor</h3>
+          <p>Evita acelerones, mantén el motor afinado y usa apps para planear rutas eficientes.</p>
+        <a href="#"></a>        </div>
+      </article>
+
+      <article class="blog-post">
+        <img src="file:///C|/\Xampp\htdocs/MI PAGINA WEB/logo.jpg" alt="Comparativas de autos" width="490" height="496" />
+        <div class="blog-content">
+          <h3>🔍 Comparativas entre modelos y marcas</h3>
+          <p>¿Toyota o Hyundai? ¿SUV o sedán? Te ayudamos a decidir con análisis claros y prácticos.</p>
+        <a href="#"></a></div>
+      </article>
+      <article class="blog-post">
+        <span class="blog-list7"><span class="blog-list61"><span class="blog-list511"><span class="blog-list4111"><img src="file:///C|/\Xampp\htdocs/MI PAGINA WEB/documentacionn.jpg" alt="Documentación y trámites" width="960" height="720" /></span></span></span></span>
+        <div class="blog-content">
+          <h3>📑 Documentación y trámites</h3>
+          <p>Todo sobre seguros, placas, revisiones técnicas y cómo mantener tus papeles en regla.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+
+    </article>
+  </section>
+
+  <section id="contacto" class="hero">
+    <h1>Contáctanos</h1>
+    <form style="max-width: 600px; margin: 0 auto;">
+      <label>Nombre:</label>
+      <input type="text" />
+      <label>Correo:</label>
+      <input type="email" />
+      <label>Mensaje:</label>
+      <textarea rows="5"></textarea>
+      <button type="submit" style="margin-top: 20px; padding: 10px 20px; background-color: #a68f6b; color: white; border: none; border-radius: 6px;">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 AutoNova. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function mostrarInicio() {
+      document.getElementById('inicio').style.display = 'block';
+      document.getElementById('catalogo').style.display = 'block';
+      document.getElementById('blog').style.display = 'none';
+      document.getElementById('contacto').style.display = 'none';
+      scrollToSeccion('inicio');
+      toggleMenu();
+    }
+
+    function scrollToSeccion(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+      toggleMenu();
+    }
+
+    function mostrarSeccion(id) {
+      document.getElementById('inicio').style.display = 'none';
+      document.getElementById('catalogo').style.display = 'none';
+      document.getElementById('blog').style.display = 'none';
+      document.getElementById('contacto').style.display = 'none';
+      document.getElementById(id).style.display = 'block';
+      toggleMenu();
+    }
+  </script>
+  <script>
+  function verAuto(imagen, titulo, precio) {
+    document.getElementById('modal-img').src = imagen;
+    document.getElementById('modal-titulo').textContent = titulo;
+    document.getElementById('modal-precio').textContent = 'Precio: ' + precio;
+    document.getElementById('modal').style.display = 'flex';
+  }
+
+  function cerrarModal() {
+    document.getElementById('modal').style.display = 'none';
+  }
+
+  function comprarAhora() {
+    alert("Gracias por tu compra. Pronto recibirás un correo con los detalles.");
+    cerrarModal();
+  }
+
+  function agregarCarrito() {
+    alert("Auto agregado al carrito.");
+    cerrarModal();
+  }
+</script>
+<script>
+  let autoSeleccionado = {
+    imagen: '',
+    titulo: '',
+    precio: ''
+  };
+
+  function verAuto(imagen, titulo, precio) {
+    autoSeleccionado = { imagen, titulo, precio };
+    document.getElementById('modal-img').src = imagen;
+    document.getElementById('modal-titulo').textContent = titulo;
+    document.getElementById('modal-precio').textContent = 'Precio: ' + precio;
+    document.getElementById('modal').style.display = 'flex';
+  }
+
+  function cerrarModal() {
+    document.getElementById('modal').style.display = 'none';
+  }
+
+  function comprarAhora() {
+    document.getElementById('modal').style.display = 'none';
+    document.getElementById('pago-titulo').textContent = autoSeleccionado.titulo;
+    document.getElementById('pago-precio').textContent = autoSeleccionado.precio;
+    document.getElementById('registro-pago').style.display = 'flex';
+  }
+
+  function cerrarRegistro() {
+    document.getElementById('registro-pago').style.display = 'none';
+  }
+
+  function confirmarPago() {
+    alert("¡Pago registrado con éxito! Pronto recibirás un correo con los detalles.");
+    cerrarRegistro();
+  }
+</script>
+
+</body>
+</html>
