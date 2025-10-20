@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoNova</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfaf6;
+    }
+
+    header {
+      background-color: #d8c3a5;
+      color: white;
+      padding: 1em;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    /* Botón de menú */
+    .menu-toggle {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      background-color: #a68f6b;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Menú desplegable */
+    .menu {
+      position: absolute;
+      top: 60px;
+      right: 1em;
+      background-color: #f5e9dc;
+      border: 1px solid #d8c3a5;
+      border-radius: 8px;
+      padding: 1em;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #3e3e3e;
+      margin: 0.5em 0;
+      font-weight: bold;
+    }
+
+    .menu a:hover {
+      color: #a68f6b;
+    }
+
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #fdfaf6;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #2c2c2c;
+    }
+
+    .hero p {
+      font-size: 1.5em;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">AutoNova</div>
+    <button class="menu-toggle" onclick="toggleMenu()">Menú</button>
+    <nav class="menu" id="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#blog">Blog</a>
+      <a href="#contacto">Contáctanos</a>
+    </nav>
+  </header>
+  
+
+  <section id="inicio" class="hero">
+    <h1>Bienvenido a AutoNova</h1>
+    <p>“Estilo, potencia y confianza en cada kilómetro.”</p>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+
+</body>
+</html>
+
+</section>
+  <img src="Free  Speed, Fast, Drive Background Images, Car Vehicle Automobile Transportation Background Photo Background PNG and Vectors.jpeg" alt="Banner de prueba" width="1327" height="323" />
+
+<script>
+  const track = document.getElementById('carousel-track');
+  const carousel = document.getElementById('carousel');
+
+  // Duplicar contenido para efecto infinito
+  const originalCards = track.innerHTML;
+  track.innerHTML = originalCards + originalCards + originalCards;
+
+  // Arrastre manual con mouse
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  carousel.addEventListener('mousedown', e => {
+    isDown = true;
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+    carousel.style.cursor = 'grabbing';
+    track.style.animationPlayState = 'paused';
+  });
+
+  carousel.addEventListener('mouseleave', () => {
+    isDown = false;
+    carousel.style.cursor = 'grab';
+    track.style.animationPlayState = 'running';
+  });
+
+  carousel.addEventListener('mouseup', () => {
+    isDown = false;
+    carousel.style.cursor = 'grab';
+    track.style.animationPlayState = 'running';
+  });
+
+  carousel.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - carousel.offsetLeft;
+    const walk = (x - startX) * 2;
+    carousel.scrollLeft = scrollLeft - walk;
+  });
+
+  // Swipe táctil para móviles
+  let touchStartX = 0;
+  let touchScrollLeft = 0;
+
+  carousel.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].pageX - carousel.offsetLeft;
+    touchScrollLeft = carousel.scrollLeft;
+    track.style.animationPlayState = 'paused';
+  });
+
+  carousel.addEventListener('touchmove', e => {
+    const x = e.touches[0].pageX - carousel.offsetLeft;
+    const walk = (x - touchStartX) * 2;
+    carousel.scrollLeft = touchScrollLeft - walk;
+  });
+
+  carousel.addEventListener('touchend', () => {
+    track.style.animationPlayState = 'running';
+  });
+</script>
+
+</head>
+<body>
+    <h2>Nuestros Vehiculos</h2>
+    <div class="car-list">
+	  <div class="car-card">
+	    <img src="carro11.jpg" alt="Carro 1" width="1200" height="190" />
+	    <h3>Ford Mustang 2022</h3>
+        <p>Precio: $28,000</p>
+        <button>Ver</button>
+</div>
+	        <div class="car-card">
+	          <img src="carro5.jpg" alt="Carro 1" width="99%" height="178" />
+	          <h3> Kia Rio 2017 </h3>
+        <p>Precio: $195,000</p>
+        <button>Ver</button>
+      </div>
+      <div class="car-card">
+        <p><img src="carro33.jpg" alt="Carro 1" width="736" height="196" /></p>
+        <h3>Hyundai Tucson 2015 </h3>
+        <p>Precio: $180,000</p>
+        <button>Ver</button>
+</div>
+      <div class="car-card">
+        <img src="TOYOTA HILUX.jpeg" alt="Carro 1" width="259" height="221" />
+        <h3>Toyota Hilux 2025 </h3>
+        <p>Precio: $350,000</p>
+        <button>Ver</button>
+      </div>
+	  <div class="car-card">
+	    <img src="descarga.jpeg" alt="Carro 1" width="259" height="165" />
+	    <h3>Honda Civic 2020</h3>
+        <p>Precio: $115,000</p>
+        <button>Ver</button>
+</div>
+      <div class="car-card">
+        <img src="carro12.jpg" alt="" width="101%" height="181" />
+        <h3>Toyota Hilux Revo</h3>
+        <p>Precio: $300,000</p>
+        <button>Ver</button>
+</div>
+      <div class="car-card">
+        <img src="carro13.jpg" alt="" width="102%" height="141" />
+        <h3>Toyota Supra 2020</h3>
+        <p>Precio: $275,000</p>
+        <button>Ver</button>
+</div>
+    <div class="car-card">
+      <img src="carro31.jpg" alt="" width="100%" height="164" />
+      <h3>Toyota Supra 2020</h3>
+        <p>Precio: $275,000</p>
+        <button>Ver</button>
+</div>
+	  <h2>Carros Nuevos</h2>
+	    <div class="car-list">
+      <div class="car-card">
+        <img src="carro14.jpg" alt="" width="96%" height="216" />
+        <h3>Toyota supra mk4</h3>
+        <p>Precio: $15,000</p>
+        <button>Ver</button>
+      </div>
+      <div class="car-card">
+        <img src="carro15.jpg" alt="" width="98%" height="169" lowsrc="carro15.jpg" />
+        <h3>Honda Civic 2020</h3>
+        <p>Precio: $15,000</p>
+        <button>Ver</button>
+      </div>
+      <div class="car-card">
+        <img src="carro17.jpg" alt="Carro 1" width="101%" height="159" />
+        <h3>Honda Civic 2020</h3>
+        <p>Precio: $15,000</p>
+        <button>Ver</button>
+      </div>
+	  <div class="car-card">
+	    <img src="carro19.jpg" alt="Carro 1" width="101%" height="175" />
+	    <h3>Honda Civic 2020</h3>
+        <p>Precio: $15,000</p>
+        <button>Ver</button>
+      </div>
+	        <div class="car-card">
+	          <img src="carro20.jpg" alt="" width="98%" height="174" />
+	          <h3>Honda Civic 2020</h3>
+        <p>Precio: $15,000</p>
+        <button>Ver</button>
+      </div>
+	        <div class="car-card">
+	          <img src="18.jpg" alt="Carro 1" width="99%" height="190" />
+	          <h3>Honda Civic 2020</h3>
+        <p>Precio: $15,000</p>
+        <button>Ver</button>
+      </div>
+	        <div class="car-card">
+	          <img src="carro22.jpg" alt="Carro 1" width="94%" height="169" />
+	          <h3>Honda Civic 2020</h3>
+        <p>Precio: $15,000</p>
+        <button>Ver</button>
+      </div>
+	        <div class="car-card">
+        <img src="carro23.jpg" alt="Carro 1" width="102%" height="194" />
+        <h3>Honda Civic 2020</h3>
+        <p>Precio: $15,000</p>
+        <button>Ver</button>
+      </div>
+	        <div class="car-card">
+	          <img src="carro24.jpg" alt="Carro 1" width="108%" height="189" />
+	          <h3>Honda Civic 2020</h3>
+        <p>Precio: $15,000</p>
+        <button>Ver</button>
+      </div>
+	        <div class="car-card">
+	          <img src="carro26.jpg" alt="Carro 1" width="102%" height="147" />
+	          <h3>Honda Civic 2020</h3>
+        <p>Precio: $15,000</p>
+        <button>Ver</button>
+      </div>
+	        <div class="car-card">
+        <img src="carro25.jpg" alt="Carro 1" width="98%" height="148" />
+        <h3>Honda Civic 2020</h3>
+        <p>Precio: $15,000</p>
+        <button>Ver</button>
+      </div>
+	        <div class="car-card">
+	          <img src="carro27.jpg" alt="Carro 1" width="91%" height="162" />
+	          <h3>Honda Civic 2020</h3>
+        <p>Precio: $15,000</p>
+        <button>Ver</button>
+      </div>
+	        <div class="car-card">
+	          <img src="carro28.jpg" alt="Carro 1" width="92%" height="151" />
+	          <h3>Honda Civic 2020</h3>
+        <p>Precio: $15,000</p>
+        <button>Ver</button>
+      </div>
+	        <div class="car-card">
+        <img src="carro29.jpg" alt="Carro 1" width="735" height="159" />
+        <h3>Honda Civic 2020</h3>
+        <p>Precio: $15,000</p>
+        <button>Ver</button>
+      </div>
+	        <div class="car-card">
+	          <img src="carro30.jpg" alt="Carro 1" width="828" height="154" />
+	          <h3>Honda Civic 2020</h3>
+        <p>Precio: $15,000</p>
+        <button>Ver</button>
+      </div>
+	  	        <div class="car-card">
+	          <img src="carro32.jpg" alt="Carro 1" width="100%" height="180" />
+	          <h3>Honda Civic 2020</h3>
+        <p>Precio: $15,000</p>
+        <button>Ver</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <h2>&nbsp;</h2>
+</section>
+
+<section id="tienda"></section>
+
+  <footer>
+    <p>&copy; 2025 AutoNova. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
